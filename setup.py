@@ -27,12 +27,13 @@ from setuptools import setup
 # Main ##############################################################
 
 setup(
-    name='custom-form-app',
+    name='nb3d-custom-form',
     version='1.0',
-    description='LMS - Custom Registration Extension Form',
-    packages=['custom_reg_form'],
+    description='Custom Registration Extension Form for NB3D',
+    packages=['nb3d_custom_form'],
     install_requires=[
         'Django',
     ],
 )
+
 
