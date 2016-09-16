@@ -11,20 +11,15 @@ class ExtraInfo(models.Model):
     The form that wraps this model is in the forms.py file.
     """
     user = models.OneToOneField(USER_MODEL, null=True)
-    FAVORITE_EDITOR = (
-        ('vim', 'Vim'),
-        ('emacs', 'Emacs'),
-        ('np', 'Notepad'),
-        ('cat', 'cat > filename'),
-    )
-
-    favorite_movie = models.CharField(
-        verbose_name="Fav Flick",
-        max_length=100,
-    )
-    favorite_editor = models.CharField(
-        verbose_name="Favorite Editor",
-        choices=FAVORITE_EDITOR,
-        blank=True, 
-        max_length=5,
+    
+    phone = models.CharField(
+        verbose_name="Phone",
+        max_length=15,
+        blank=False, 
+        error_messages={
+            'null':"Please enter a phone number",
+            'blank':"Please enter a phone number",
+            'invalid':"Invalid phone number",
+        },
+        help_text="Example +91-857433876"
     )
